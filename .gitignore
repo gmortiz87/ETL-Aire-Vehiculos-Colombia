@@ -1,0 +1,24 @@
+# Entornos Virtuales
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Archivos intermedios de Python / Computación
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Excluir los CVS de datos pesados (opcional, para no agotar el git)
+*.csv
+!dataset_final_ml.csv  # Mantenemos este porque es el producto final limpio
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
