@@ -1,6 +1,41 @@
-# 🌬️ Análisis del Impacto del Parque Automotor en la Calidad del Aire en Colombia
+# Análisis del Impacto del Parque Automotor en la Calidad del Aire en Colombia
 
 Este proyecto desarrolla un pipeline ETL-P (Extracción, Transformación, Carga y Predicción) estructurado con un enfoque transversal hacia la **Ciencia de Datos e Inteligencia Artificial**. Su propósito principal es integrar y estructurar datos de calidad del aire y del crecimiento del parque automotor en territorio colombiano para habilitar modelos predictivos de impacto ambiental.
+
+## 🚀 Guía de Operación y Ejecución
+
+El proyecto está diseñado para ser flexible según la necesidad del analista, ofreciendo dos modalidades de carga de datos:
+
+## 🛠️ Instalación y Requisitos
+
+Para asegurar la reproducibilidad del pipeline, siga estos pasos:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/gmortiz87/ETL-Aire-Vehiculos-Colombia.git
+   cd ETL-Aire-Vehiculos-Colombia
+
+2. **Crear y activar el entorno virtual:**
+   ```bash
+   python -m venv .venv
+   .\.venv\Scripts\Activate
+   ```
+
+3. **Instalar dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### **Opción A: Ejecución Integral (API Online)**
+Ideal para obtener los datos más recientes. El pipeline se conecta automáticamente a los servidores de **Datos Abiertos Colombia** vía API Socrata, descarga los registros crudos y ejecuta todo el flujo de transformación.
+*   **Ventaja:** Datos actualizados en tiempo real.
+*   **Requisito:** Conexión a internet estable.
+
+### **Opción B: Carga por Checkpoints (Offline/Rápida)**
+Ideal para auditorías rápidas o entrenamiento de modelos. Utiliza los archivos depositados en la carpeta `data_checkpoint/` que actúan como una "caja negra" de seguridad.
+*   **Nivel 1 (Raw):** Restaura los 500k registros de la fase de extracción original.
+*   **Nivel 2 (Feature Store):** Carga el dataset final ya procesado (`dataset_final_ml.csv`), permitiendo ejecutar la IA en milisegundos.
+
 
 ## 📌 Contexto y Definición del Problema
 En Colombia, la relación entre el crecimiento vehicular (que superó los 19.8 millones de vehículos en 2024) y la salud pública es crítica. Sin embargo, la información suele estar dispersa. Este proyecto resuelve la fragmentación de datos respondiendo a:
